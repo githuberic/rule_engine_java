@@ -1,0 +1,12 @@
+package com.ytooo.frm
+dialect "java"
+import com.lgq.re.drools.entity.People
+import com.lgq.re.drools.entity.Animal
+
+rule "from"
+when
+    $an : Animal()
+    $p : People(sex != 3 && drlType == "from") from $an.peoples
+    then
+        System.out.println($p);
+    end

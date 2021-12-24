@@ -1,0 +1,17 @@
+package com.rules.impor
+dialect "java"
+import com.lgq.re.drools.entity.People
+import function com.lgq.re.drools.utils.DroolsStringUtils.isEmpty
+
+function String hello(String applicantName) {
+    return "Hello " + applicantName + "!";
+}
+
+rule "impot"
+
+  when
+    $p : People(drlType == "impot")
+  then
+    System.out.println(isEmpty("我"));
+    System.out.println(hello("达"));
+  end
