@@ -1,4 +1,4 @@
-package com.ytooo.declar
+package com.lgq.drl.declar
 dialect "java"
 
 declare Love

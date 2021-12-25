@@ -1,4 +1,4 @@
-package com.ytooo.quey
+package com.lgq.drl.quey
 dialect "java"
 
 import com.lgq.re.drools.entity.People

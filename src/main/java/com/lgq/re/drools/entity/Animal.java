@@ -9,9 +9,6 @@ import java.util.List;
  */
 @Data
 public class Animal {
-
     private Integer level;
-
     private List<People> peoples;
-
 }

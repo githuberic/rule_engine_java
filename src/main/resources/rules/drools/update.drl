@@ -1,4 +1,4 @@
-package com.ytooo.updat
+package com.lgq.drl.updat
 dialect "java"
 import com.lgq.re.drools.entity.People
 
@@ -10,12 +10,14 @@ rule 'update1'
         $p.setSex(1);
         update($p)
     end
+
 rule 'update2'
     when
        $p : People(drlType == "update" && sex == 1)
     then
         System.out.println("update2执行====" + $p);
     end
+
 rule 'modify'
     when
       $p : People(drlType == "update" && sex == 1)

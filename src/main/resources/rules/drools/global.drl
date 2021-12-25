@@ -1,15 +1,14 @@
-package com.ytooo.globa
+package com.lgq.drl.globa
 dialect "java"
 
 import com.lgq.re.drools.entity.People
 import  java.lang.Integer
 
-global com.lgq.re.drools.service.GloableService service
+global com.lgq.re.drools.service.InitService service
 global java.util.List list
 global com.lgq.re.drools.entity.NumCount numCount
 
 rule "global"
-
     when
         People(drlType == "global")
         $p : People() from service.getPeoples()

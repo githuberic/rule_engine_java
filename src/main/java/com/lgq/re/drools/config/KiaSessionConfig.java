@@ -32,27 +32,19 @@ public class KiaSessionConfig {
     }
 
     private Resource[] getRuleFiles() throws IOException {
-
         ResourcePatternResolver resourcePatternResolver = new PathMatchingResourcePatternResolver();
-        final Resource[] resources = resourcePatternResolver.getResources("classpath*:" + RULES_PATH + "**/*.*");
-        return resources;
-
+        return resourcePatternResolver.getResources("classpath*:" + RULES_PATH + "**/*.*");
     }
 
     @Bean
     public KieContainer kieContainer() throws IOException {
 
         final KieRepository kieRepository = getKieServices().getRepository();
-        kieRepository.addKieModule(new KieModule() {
-            public ReleaseId getReleaseId() {
-                return kieRepository.getDefaultReleaseId();
-            }
-        });
+        kieRepository.addKieModule(kieRepository::getDefaultReleaseId);
 
         KieBuilder kieBuilder = getKieServices().newKieBuilder(kieFileSystem());
         kieBuilder.buildAll();
         return getKieServices().newKieContainer(kieRepository.getDefaultReleaseId());
-
     }
 
     private KieServices getKieServices() {

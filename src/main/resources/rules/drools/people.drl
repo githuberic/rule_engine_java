@@ -1,4 +1,4 @@
-package com.ytooo.people
+package com.lgq.drl.people
 import com.lgq.re.drools.entity.People
 import com.lgq.re.drools.entity.Cat
 dialect  "java"
@@ -7,11 +7,42 @@ rule "man"
     when
         $p : People(sex == 1 && drlType == "people")
     then
-        System.out.println($p.getName() + "是男孩");
+        System.out.println($p.getName() + "is boy");
 end
+
 rule "cat"
     when
         $c : Cat(sex == 1 && $c.getName().equals("金"))
     then
-        System.out.println($c.getName() + "是公的");
+        System.out.println($c.getName() + "is male");
+end
+
+rule "girl"
+    when
+        $p : People(sex == 0 && drlType == "people")
+    then
+        System.out.println($p.getName() + "is girl");
+end
+
+rule "girl1"
+    when
+        People(drlType == "people")
+    then
+        System.out.println("girl1规则执行");
+end
+
+rule "girl2"
+    when
+        People(sex == 0 && drlType == "people")
+    then
+        System.out.println("girl2规则执行");
+end
+
+rule "girl3"
+    when
+        $p:People(sex == 0,$sex : sex && drlType == "people")
+    then
+        System.out.println("girl3规则执行");
+        System.out.println($p);
+        System.out.println($sex);
 end

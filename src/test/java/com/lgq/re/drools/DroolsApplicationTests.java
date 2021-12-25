@@ -8,28 +8,27 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
 import org.kie.api.runtime.KieSession;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import javax.annotation.Resource;
 import java.util.ArrayList;
 
 @SpringBootTest
 @RunWith(SpringRunner.class)
 class DroolsApplicationTests {
 
-    @Autowired
+    @Resource
     private KieSession session;
 
     @Test
     public void people() {
-
         People people = new People();
-        people.setName("达");
+        people.setName("lgq");
         people.setSex(1);
         people.setDrlType("people");
-        session.insert(people);//插入
-        session.fireAllRules();//执行规则
+        session.insert(people);
+        session.fireAllRules();
     }
 
     @Test
@@ -37,8 +36,8 @@ class DroolsApplicationTests {
         Cat cat = new Cat();
         cat.setName("金");
         cat.setSex(1);
-        session.insert(cat);//插入
-        session.fireAllRules();//执行规则
+        session.insert(cat);
+        session.fireAllRules();
     }
 
     @Test
@@ -51,8 +50,8 @@ class DroolsApplicationTests {
         animal.getPeoples().add(p1);
         animal.getPeoples().add(p2);
         animal.getPeoples().add(p3);
-        session.insert(animal);//插入
-        session.fireAllRules();//执行规则
+        session.insert(animal);
+        session.fireAllRules();
     }
 
     @Test

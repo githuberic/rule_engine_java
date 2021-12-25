@@ -10,7 +10,7 @@ import java.util.List;
  * @author lgq
  */
 @Service
-public class GloableService {
+public class InitService {
     public static List<People> getPeoples() {
         List<People> peoples = new ArrayList<>();
         peoples.add(new People(1, "春", "global"));

@@ -1,4 +1,4 @@
-package com.ytooo.collt
+package com.lgq.drl.collt
 dialect "java"
 import com.lgq.re.drools.entity.Sensor
 import com.lgq.re.drools.entity.People

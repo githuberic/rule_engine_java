@@ -1,4 +1,4 @@
-package com.ytooo.frm
+package com.lgq.drl.frm
 dialect "java"
 import com.lgq.re.drools.entity.People
 import com.lgq.re.drools.entity.Animal
